@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Lora } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -48,10 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${lora.variable} bg-background`}>
-      <body className="font-sans text-foreground antialiased">
-        {children}
-        <SpeedInsights />
-      </body>
+      <body className="font-sans text-foreground antialiased">{children}</body>
     </html>
   );
 }
