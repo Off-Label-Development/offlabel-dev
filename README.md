@@ -80,3 +80,23 @@ Uses Google Workspace. `contact@offlabel.dev` configured as alias/group in Googl
 ## Migration Notes
 
 Converted from Next.js 15 (Vercel) → Astro 5 (Cloudflare Pages) in Oct 2026. See `RUNBOOK.md` for full deployment runbook.
+
+## Future Work / TODOs
+
+### Analytics & Performance
+- [ ] **Enable Cloudflare Web Analytics** for `offlabel.dev` (Dashboard → Analytics → Web Analytics → Add site) — required for `PUBLIC_CF_ANALYTICS` to function
+- [ ] **Cache Rule** for `/_astro/*` → `Cache-Control: public, max-age=31536000, immutable`
+- [ ] **Image optimization**: add `imageService: "compile"` to `@astrojs/cloudflare` config for sharp-based build-time optimization
+
+### Security & Hardening
+- [ ] **Security headers** via Transform Rules: CSP, HSTS, X-Frame-Options, Referrer-Policy
+- [ ] **CAA record check**: `dig CAA offlabel.dev` — ensure no CAA blocks Let's Encrypt
+- [ ] **Turnstile** on contact form (widget + secret verification in Pages Function)
+
+### Observability
+- [ ] **Custom 404 analytics** event tracking in `404.astro`
+- [ ] **Sitemap pinging** GitHub Action (ping Google/Bing on sitemap change)
+
+### Developer Experience
+- [ ] **Staging preview**: separate `PREVIEW_FORMSPREE_ID` env var for preview deployments
+- [ ] **Uptime monitoring**: Cloudflare Health Checks or UptimeRobot
