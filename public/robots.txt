@@ -1,0 +1,10 @@
+# offlabel.dev robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://offlabel.dev/sitemap-0.xml
+
+# Disallow private/admin paths (none currently, but good practice)
+# Disallow: /api/
+# Disallow: /_astro/

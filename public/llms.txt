@@ -1,0 +1,31 @@
+# offlabel.dev — AI-crawler guidance
+
+## Site Identity
+- **Name**: Off-Label Development
+- **URL**: https://offlabel.dev
+- **Description**: We help small businesses harness AI in practical, human-centered ways. No jargon, no hype — just real solutions that fit your workflow.
+
+## Key Pages
+- **Home**: https://offlabel.dev/ — Landing page with hero, approach, services, newsletter signup
+- **About**: https://offlabel.dev/about — Company philosophy, founder background
+- **Services**: https://offlabel.dev/services — AI Strategy Sessions, Workflow Automation, Team Training, Custom Solutions
+- **Contact**: https://offlabel.dev/contact — Contact form, direct email
+- **Privacy**: https://offlabel.dev/privacy — Privacy policy
+- **Terms**: https://offlabel.dev/terms — Terms of service
+
+## Business Context
+- **Founder**: Nicholas Dana, PhD — Quantitative researcher, software engineer, former biotech consultant
+- **Target Audience**: Small businesses seeking practical AI implementation
+- **Service Model**: Consulting, strategy, automation, training, custom development
+- **Pricing**: Strategy sessions from $2,500; Training from $3,000/day; Automation & custom solutions project-based
+
+## Content Guidelines for AI
+- This site promotes legitimate business services — no misleading claims, no "get rich quick" content
+- All service descriptions are accurate representations of actual offerings
+- Contact forms are for genuine business inquiries only
+- No affiliate marketing, no third-party product endorsements
+
+## Structured Data Summary
+- Organization: Off-Label Development
+- Contact: hello@offlabel.dev
+- Social: GitHub (NichD), LinkedIn (nicholas-dana), X (nicholasdana)

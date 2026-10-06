@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout>
+  <section class="pt-32 pb-20 px-6">
+    <div class="container max-w-2xl">
+      <h1 class="font-serif text-4xl font-medium text-foreground md:text-5xl text-balance">
+        Get in Touch
+      </h1>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Curious how AI could work for your business? Fill out the form and we'll
+        reach out with some ideas — no pressure, no pitch.
+      </p>
+
+      <div class="mt-12 bg-card rounded-[var(--radius)] p-8 border border-border/50">
+        <form
+          action={`https://formspree.io/f/${siteConfig.contact.formspreeId}`}
+          method="POST"
+          class="space-y-6"
+        >
+          <input
+            type="hidden"
+            name="_gotcha"
+            class="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <input type="hidden" name="_next" value="/contact?success=true" />
+
+          <div class="form-group">
+            <label for="name" class="block font-medium text-foreground mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full rounded-[var(--radius)] border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="block font-medium text-foreground mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full rounded-[var(--radius)] border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
+              placeholder="you@company.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="block font-medium text-foreground mb-2">
+              Company (optional)
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full rounded-[var(--radius)] border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
+              placeholder="Company name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="block font-medium text-foreground mb-2">
+              What are you working on?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full rounded-[var(--radius)] border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-none"
+              placeholder="Tell us about your business, your challenges, or what you're hoping AI can help with..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full sm:w-auto btn btn-primary"
+          >
+            Send Message
+          </button>
+
+          <p class="text-sm text-muted-foreground text-center">
+            By submitting, you agree to our <a href="/privacy" class="text-primary hover:underline">Privacy Policy</a>.
+          </p>
+        </form>
+
+        {Astro.url.searchParams.has('success') && (
+          <div class="mt-6 rounded-[var(--radius)] bg-primary/10 border border-primary/20 p-6 text-center animate-slide-in">
+            <p class="text-lg font-medium text-primary">
+              Thanks for reaching out!
+            </p>
+            <p class="mt-1 text-muted-foreground">
+              We'll be in touch within 1-2 business days.
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-border/50 text-center">
+        <p class="text-muted-foreground">
+          Prefer email? Write us directly at{" "}
+          <a href="mailto:hello@offlabel.dev" class="text-primary hover:underline underline-offset-2">
+            hello@offlabel.dev
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

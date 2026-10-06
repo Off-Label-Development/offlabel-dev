@@ -1,26 +1,32 @@
 {
   "name": "offlabel-dev",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "wrangler pages dev dist",
+    "preview:tailscale": "wrangler pages dev dist --ip 0.0.0.0 --port 8788 --live-reload=false",
+    "check": "astro check",
+    "lint": "eslint . --ext .astro,.ts,.js",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "^15.3.2"
+    "@astrojs/cloudflare": "^12.0.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "@fontsource-variable/inter": "^5.0.0",
+    "@fontsource/lora": "^5.0.0",
+    "astro": "^5.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "tailwindcss": "^4",
-    "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "^15.3.2"
+    "@cloudflare/workers-types": "^4.20240000.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-astro": "^1.0.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.0.0"
   }
 }

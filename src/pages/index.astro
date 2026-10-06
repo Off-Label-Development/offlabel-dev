@@ -1,0 +1,316 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout>
+  <section class="relative pt-32 pb-20 px-6 md:pt-40 md:pb-28 overflow-hidden">
+    <div class="mx-auto max-w-4xl flex flex-col items-center">
+      {/* Static Hero Illustration */}
+      <div class="relative w-full h-80 md:h-96 mb-8 flex items-center justify-center">
+        <svg
+          viewBox="0 0 200 170"
+          class="w-48 h-44 md:w-56 md:h-52"
+          role="img"
+          aria-label="Person relaxing while AI handles their work on a computer"
+        >
+          {/* Desk */}
+          <rect x="14" y="138" width="172" height="10" rx="3" class="fill-muted" />
+          <rect x="22" y="148" width="8" height="16" rx="2" class="fill-muted" />
+          <rect x="170" y="148" width="8" height="16" rx="2" class="fill-muted" />
+
+          {/* Person head + shoulders behind the monitor */}
+          <g>
+            {/* Shoulders */}
+            <path
+              d="M64 138 q36 -34 72 0 Z"
+              class="fill-accent"
+              opacity="0.9"
+            />
+            {/* Neck */}
+            <rect x="93" y="56" width="14" height="14" rx="5" class="fill-[#F2D6B6]" />
+            {/* Head */}
+            <circle cx="100" cy="38" r="20" class="fill-[#F2D6B6] stroke-foreground" strokeWidth="2" />
+            {/* Hair */}
+            <path
+              d="M80 34 q0 -22 20 -22 q20 0 20 22 q-10 -10 -20 -10 q-10 0 -20 10 Z"
+              class="fill-foreground"
+            />
+
+            {/* Happy/Relieved Face */}
+            <g class="stroke-foreground" strokeWidth="2" strokeLinecap="round" fill="none">
+              {/* Happy closed eyes */}
+              <path d="M92 37 q4 -4 8 0" />
+              <path d="M108 37 q4 -4 8 0" />
+              {/* Big smile */}
+              <path d="M92 49 q8 9 16 0" />
+            </g>
+
+            {/* Hands relaxed on desk */}
+            <circle cx="50" cy="132" r="7" class="fill-[#F2D6B6] stroke-foreground" strokeWidth="1.5" />
+            <circle cx="150" cy="132" r="7" class="fill-[#F2D6B6] stroke-foreground" strokeWidth="1.5" />
+          </g>
+
+          {/* CRT monitor */}
+          <g>
+            {/* Body */}
+            <rect
+              x="58"
+              y="72"
+              width="84"
+              height="68"
+              rx="8"
+              class="fill-card stroke-foreground"
+              strokeWidth="2.5"
+            />
+            {/* Screen - green checkmark */}
+            <rect
+              x="66"
+              y="80"
+              width="68"
+              height="46"
+              rx="4"
+              class="fill-primary/15"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              style="color: var(--color-border)"
+            />
+            <g class="stroke-primary" strokeWidth="2.5" strokeLinecap="round">
+              <path d="M82 103 l8 8 l18 -18" fill="none" />
+            </g>
+            {/* Stand */}
+            <rect x="92" y="140" width="16" height="6" class="fill-foreground" />
+          </g>
+
+          {/* Sparkles - relieved mood */}
+          <g class="fill-primary" opacity="0.8">
+            <path d="M40 50 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2 l5 -2 Z" />
+            <path d="M160 44 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5 Z" />
+          </g>
+        </svg>
+      </div>
+
+      {/* Main headline - always visible */}
+      <div class="text-center">
+        <h1 class="font-serif text-4xl font-medium leading-tight text-foreground md:text-5xl lg:text-6xl text-balance">
+          AI that works for you, not the other way around
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto text-pretty">
+          We help small businesses harness AI in practical, human-centered ways. No
+          jargon, no hype — just real solutions that fit your workflow.
+        </p>
+        <div class="mt-10 max-w-md mx-auto">
+          <form
+            action={`https://formspree.io/f/${siteConfig.contact.formspreeId}`}
+            method="POST"
+            class="flex flex-col gap-3 sm:flex-row sm:gap-0"
+          >
+            <input
+              type="hidden"
+              name="_gotcha"
+              class="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <label for="email" class="sr-only">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="flex-1 rounded-[var(--radius)] sm:rounded-r-none border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
+            />
+            <button
+              type="submit"
+              class="rounded-[var(--radius)] sm:rounded-l-none btn btn-primary"
+            >
+              Stay in the loop
+            </button>
+          </form>
+          <p class="mt-3 text-sm text-muted-foreground">
+            Join our newsletter for practical AI tips. No spam, ever.
+          </p>
+        </div>
+      </div>
+
+      {/* Decorative element */}
+      <div
+        class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/5 via-accent/5 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
+    </div>
+  </section>
+
+  <section id="approach" class="py-20 px-6 bg-secondary/50">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-medium text-foreground md:text-4xl text-balance">
+          Our approach is refreshingly simple
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          We believe AI should adapt to how you work — not the other way around.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="relative bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-border transition-colors">
+          <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+            1
+          </span>
+          <h3 class="text-xl font-semibold text-foreground mt-2">
+            Listen First
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            We start by understanding your business — your challenges, your workflow, your team. AI solutions only work when they fit your reality.
+          </p>
+        </div>
+        <div class="relative bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-border transition-colors">
+          <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+            2
+          </span>
+          <h3 class="text-xl font-semibold text-foreground mt-2">
+            Start Small
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            No massive overhauls. We identify quick wins that build confidence and deliver value before scaling to bigger initiatives.
+          </p>
+        </div>
+        <div class="relative bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-border transition-colors">
+          <span class="absolute -top-4 left-6 inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+            3
+          </span>
+          <h3 class="text-xl font-semibold text-foreground mt-2">
+            Stay Practical
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            We focus on solutions you can actually use. If it requires a PhD to operate, it's not the right fit for your business.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20 px-6">
+    <div class="container">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-3xl font-medium text-foreground md:text-4xl text-balance">
+          How we can help
+        </h2>
+        <p class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          Every business is different. Here are the ways we typically work with small businesses like yours.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="group bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-primary mb-4 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">
+            AI Strategy Sessions
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            One-on-one sessions to identify where AI can help your business. We cut through the noise and find practical opportunities.
+          </p>
+        </div>
+
+        <div class="group bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-primary mb-4 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">
+            Workflow Automation
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            We help you automate repetitive tasks — from email sorting to invoice processing — so you can focus on what matters.
+          </p>
+        </div>
+
+        <div class="group bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-primary mb-4 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">
+            Team Training
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            Hands-on workshops that demystify AI for your team. We teach practical skills, not theory — so everyone can contribute.
+          </p>
+        </div>
+
+        <div class="group bg-card rounded-[var(--radius)] p-8 border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-primary mb-4 group-hover:bg-primary/10 transition-colors">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-foreground">
+            Custom Solutions
+          </h3>
+          <p class="mt-3 text-muted-foreground leading-relaxed">
+            Need something specific? We build tailored AI tools that solve your unique challenges — designed for simplicity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect" class="py-20 px-6 bg-secondary/50">
+    <div class="container max-w-2xl text-center">
+      <h2 class="font-serif text-3xl font-medium text-foreground md:text-4xl text-balance">
+        Let's start a conversation
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Curious how AI could work for your business? Drop your email and we'll
+        reach out with some ideas — no pressure, no pitch.
+      </p>
+      <div class="mt-10 max-w-md mx-auto">
+        <form
+          action={`https://formspree.io/f/${siteConfig.contact.formspreeId}`}
+          method="POST"
+          class="flex flex-col gap-3 sm:flex-row sm:gap-0"
+        >
+          <input
+            type="hidden"
+            name="_gotcha"
+            class="honeypot"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <label for="email-footer" class="sr-only">
+            Email address
+          </label>
+          <input
+            type="email"
+            id="email-footer"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="flex-1 rounded-[var(--radius)] sm:rounded-r-none border border-input bg-card px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
+          />
+          <button
+            type="submit"
+            class="rounded-[var(--radius)] sm:rounded-l-none btn btn-primary"
+          >
+            Stay in the loop
+          </button>
+        </form>
+      </div>
+      <p class="mt-8 text-sm text-muted-foreground">
+        Or email us directly at{" "}
+        <a href="mailto:hello@offlabel.dev" class="text-primary hover:underline underline-offset-2">
+          hello@offlabel.dev
+        </a>
+      </p>
+    </div>
+  </section>
+</Layout>

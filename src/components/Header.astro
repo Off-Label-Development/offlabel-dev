@@ -1,0 +1,31 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<header class="fixed top-0 left-0 right-0 z-[var(--z-sticky)] bg-background/90 backdrop-blur-md border-b border-border/50">
+  <nav class="container flex items-center justify-between py-4">
+    <a href="/" class="text-lg font-semibold text-foreground tracking-tight" aria-label={siteConfig.name}>
+      Off-Label
+    </a>
+    <ul class="hidden md:flex items-center gap-8">
+      <li>
+        <a href="/about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          About
+        </a>
+      </li>
+      <li>
+        <a href="/services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          Services
+        </a>
+      </li>
+      <li>
+        <a href="/contact" class="btn btn-primary text-sm">
+          Get in Touch
+        </a>
+      </li>
+    </ul>
+    <a href="/contact" class="md:hidden btn btn-primary text-sm">
+      Connect
+    </a>
+  </nav>
+</header>

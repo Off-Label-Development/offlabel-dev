@@ -1,0 +1,17 @@
+{
+  "name": "Off-Label Development",
+  "short_name": "Off-Label",
+  "description": "Practical AI for Small Business",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF7",
+  "theme_color": "#3D5A4C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

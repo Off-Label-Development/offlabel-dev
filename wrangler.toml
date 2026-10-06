@@ -1,0 +1,16 @@
+name = "offlabel-dev"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+# NOTE: Build command / output dir are configured in the Cloudflare
+# Pages dashboard (legacy build framework), NOT here.
+# This file only carries Pages-valid keys for `wrangler pages dev`
+# local simulation.
+
+# Formspree form ID → set as env var in Pages dashboard:
+#   FORMSPREE_ID = "xxxxxxxx"
+# Cloudflare Web Analytics → set as env var:
+#   PUBLIC_CF_ANALYTICS = "true"
+# Cloudflare Turnstile (optional) → set as env vars:
+#   TURNSTILE_SITE_KEY = "..."
+#   TURNSTILE_SECRET_KEY = "..."
