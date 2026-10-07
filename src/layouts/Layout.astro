@@ -1,27 +1,111 @@
 ---
+/**
+ * Layout.astro
+ * Base HTML, <head> SEO, header, footer, Cloudflare Analytics
+ */
 import '../styles/global.css';
 import { siteConfig } from '../config/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  canonicalPath?: string;
+  noIndex?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  ogImage = siteConfig.ogImage,
+  ogType = 'website',
+  canonicalPath = '/',
+  noIndex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonicalURL = new URL(canonicalPath, siteConfig.url).toString();
+const ogImageURL = new URL(ogImage, siteConfig.url).toString();
+const currentYear = new Date().getFullYear();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={siteConfig.description} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-0.xml" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    
+    <!-- Favicon / Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-0.xml" />
+    
+    <!-- JSON-LD Structured Data -->
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd, null, 2)} />
+    )}
+    
+    <!-- Cloudflare Web Analytics -->
+    {siteConfig.analytics.cfEnabled && (
+      <script
+        defer
+        data-cf-beacon='{"token": ""}'
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+      />
+    )}
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
+    
     <Header />
-    <main id="main">
+    
+    <main id="main" role="main">
       <slot />
     </main>
+    
     <Footer />
+    
+    <!-- Cloudflare Turnstile (if configured) -->
+    {siteConfig.turnstile.siteKey && (
+      <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+      />
+    )}
   </body>
 </html>
