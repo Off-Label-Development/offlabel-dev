@@ -411,15 +411,15 @@ hr {
 /* Text Balance */
 .text-balance { text-wrap: balance; }
 
-/* Background Opacity Utilities */
-.bg-background\/90 { background-color: var(--color-background); opacity: 0.9; }
-.bg-background\/80 { background-color: var(--color-background); opacity: 0.8; }
-.bg-primary\/90 { background-color: var(--color-primary); opacity: 0.9; }
-.bg-primary\/80 { background-color: var(--color-primary); opacity: 0.8; }
-.bg-primary\/15 { background-color: var(--color-primary); opacity: 0.15; }
-.bg-primary\/30 { background-color: var(--color-primary); opacity: 0.3; }
-.bg-border\/50 { background-color: var(--color-border); opacity: 0.5; }
-.bg-ring\/50 { background-color: var(--color-ring); opacity: 0.5; }
+/* Background Opacity Utilities - use color-mix for background-only transparency */
+.bg-background\/90 { background-color: color-mix(in srgb, var(--color-background) 90%, transparent); }
+.bg-background\/80 { background-color: color-mix(in srgb, var(--color-background) 80%, transparent); }
+.bg-primary\/90 { background-color: color-mix(in srgb, var(--color-primary) 90%, transparent); }
+.bg-primary\/80 { background-color: color-mix(in srgb, var(--color-primary) 80%, transparent); }
+.bg-primary\/15 { background-color: color-mix(in srgb, var(--color-primary) 15%, transparent); }
+.bg-primary\/30 { background-color: color-mix(in srgb, var(--color-primary) 30%, transparent); }
+.bg-border\/50 { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); }
+.bg-ring\/50 { background-color: color-mix(in srgb, var(--color-ring) 50%, transparent); }
 
 /* Text Utilities */
 .text-center { text-align: center; }
