@@ -348,7 +348,6 @@ hr {
 .z-toast { z-index: var(--z-toast); }
 
 /* Background Utilities */
-.bg-background\/90 { background-color: var(--color-background); opacity: 0.9; }
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-muted { background-color: var(--color-muted); }
