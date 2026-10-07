@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site';
+---
+
+<Layout>
+  <section class="pt-40 pb-20 px-6">
+    <div class="container max-w-3xl">
+      <h1 class="font-serif text-4xl font-medium text-foreground md:text-5xl text-balance">
+        Our Team
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-muted-foreground">
+        Off-Label Development is led by a team of experienced practitioners who bridge deep technical expertise with real-world business impact.
+      </p>
+
+      <div class="mt-16 space-y-16">
+        <article>
+          <div class="relative">
+            <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-full overflow-hidden float-left md:float-left mr-0 md:mr-8 mb-4 md:mb-0 shape-outside-circle shape-outside-margin">
+              <img src="/nicholas-dana.jpg" alt="Nicholas P. Dana" class="w-full h-full object-cover clip-circle" />
+            </div>
+            
+            <div class="text-center md:text-left">
+              <h2 class="font-serif text-2xl font-medium text-foreground">
+                Nicholas P. Dana, PhD
+              </h2>
+              <p class="mt-2 text-primary font-medium">
+                Founder & Principal Consultant
+              </p>
+              <div class="mt-4 flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="https://www.linkedin.com/in/nicholas-dana/" class="text-sm text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener">
+                  LinkedIn
+                </a>
+                <a href="https://www.npdana.pro" class="text-sm text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener">
+                  npdana.pro
+                </a>
+                <a href="mailto:hello@offlabel.dev" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Email
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-8 md:mt-0 space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Innovative data scientist, developer and AI engineer integrating advanced analytics and AI to accelerate discovery and provide business impact. Proven leader in building scalable systems, automating complex pipelines, and developing operational tools that drive value across business applications and technology sectors.
+              </p>
+
+              <div class="border-t border-border pt-6 space-y-4">
+                <h3 class="font-semibold text-foreground">Experience</h3>
+
+                <p class="text-muted-foreground leading-relaxed">
+                  At <strong>Elephas Biosciences</strong>, I've spent the last several years as Principal AI Scientist &amp; Developer architecting multi-modal analytics pipelines that combine imaging, cytokine, and assay data to predict drug response in ex vivo tumor models. As technical lead, we achieved over 96% training accuracy and 87% concordance with validation samples — work that directly enabled the company's first Lab Derived Test. I also led the statistical framework (adapting a TOST approach) for validating that test's method transfer across international sites.
+                </p>
+
+                <p class="text-muted-foreground leading-relaxed">
+                  Earlier, at <strong>GeoVisual Analytics</strong>, I built and trained deep-learning computer vision models for agricultural analytics using drone imagery — multi-modal systems fusing custom image data, weather feeds, and geolocation. Those bespoke models delivered best in class accuracy on harvest timing and yield forecasts across production sites in California and Arizona.
+                </p>
+
+                <p class="text-muted-foreground leading-relaxed">
+                  My start in industry was at <strong>Essen BioScience (Sartorius)</strong>, where I designed segmentation and denoising algorithms for automated live-cell imaging.
+                </p>
+              </div>
+
+              <div class="border-t border-border pt-6 space-y-4">
+                <h3 class="font-semibold text-foreground">Education &amp; Credentials</h3>
+                <p class="text-muted-foreground leading-relaxed">
+                  I hold a <strong>PhD in Biomedical Engineering</strong> from The University of Texas at Austin (2016), where I was an NIH T32 Bioinformatics Fellow — my dissertation focused on photoacoustic imaging for cardiovascular applications. I also completed the <strong>Post Graduate Program in AI Agents for Business Applications</strong> at UT Austin's McCombs School of Business (2026), an accelerated program for designing, deploying, and governing agentic AI solutions.
+                </p>
+              </div>
+
+              <div class="border-t border-border pt-6 space-y-4">
+                <h3 class="font-semibold text-foreground">Selected Publications</h3>
+                <ul class="space-y-2 text-sm list-disc list-inside">
+                  <li>Dana N. et al., "Prediction of immunotherapy response using live tumor fragments from routine clinical biopsies" — Manuscript in review (<a href="https://www.medrxiv.org/content/10.64898/2026.06.05.26354635v1" class="text-primary hover:underline" target="_blank" rel="noopener">link</a>)</li>
+                  <li>Ramasubramanian T.S. et al., "A live tumor fragment platform to assess immunotherapy response in core needle biopsies" — Journal of Translational Medicine 2025 (<a href="https://www.biorxiv.org/content/10.1101/2025.07.18.663728v1" class="text-primary hover:underline" target="_blank" rel="noopener">link</a>)</li>
+                  <li>Dana N. et al., "Development and characterization of cytokine-based classifiers to predict response to immunotherapy using an ex vivo live tumor fragment platform" — SITC 2025 Poster (<a href="https://jitc.bmj.com/content/13/Suppl_2/A62" class="text-primary hover:underline" target="_blank" rel="noopener">link</a>)</li>
+                  <li>Dana N. et al., "Optimization of dual-wavelength intravascular photoacoustic imaging of atherosclerotic plaques using Monte Carlo optical modeling" — Journal of Biomedical Optics, 2017 (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5658287/" class="text-primary hover:underline" target="_blank" rel="noopener">link</a>)</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="clear-both" />
+          </div>
+        </article>
+
+        <div class="bg-secondary/50 rounded-[var(--radius)] p-8 md:p-12 text-center">
+          <h2 class="font-serif text-2xl font-medium text-foreground">
+            Growing the team
+          </h2>
+          <p class="mt-3 text-muted-foreground max-w-xl mx-auto">
+            We're always interested in connecting with talented individuals who share our values. If you'd like to explore working together, reach out.
+          </p>
+          <a href="/contact" class="mt-6 inline-block btn btn-primary">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
